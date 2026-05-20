@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Pink Bollworm",
+    "crop": "Cotton",
+    "riskLevel": "High",
+    "recommendation": "Apply pheromone traps"
+  },
+  {
+    "id": 2,
+    "name": "Stem Borer",
+    "crop": "Rice",
+    "riskLevel": "Medium",
+    "recommendation": "Use biological control"
+  },
+  {
+    "id": 3,
+    "name": "Armyworm",
+    "crop": "Sugarcane",
+    "riskLevel": "High",
+    "recommendation": "Monitor fields daily"
+  },
+  {
+    "id": 4,
+    "name": "Aphids",
+    "crop": "Wheat",
+    "riskLevel": "Low",
+    "recommendation": "Spray neem extract"
+  },
+  {
+    "id": 5,
+    "name": "Leaf Blight",
+    "crop": "Maize",
+    "riskLevel": "Medium",
+    "recommendation": "Use resistant seeds"
+  }
+]

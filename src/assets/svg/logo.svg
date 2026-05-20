@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+width="180"
+height="60"
+viewBox="0 0 180 60">
+
+<circle
+cx="30"
+cy="30"
+r="24"
+fill="#16A34A"/>
+
+<path
+d="M18 35C18 25 25 18 35 18C33 24 31 30 25 35C28 36 32 38 35 42C25 45 18 42 18 35Z"
+fill="#FACC15"/>
+
+<text
+x="65"
+y="38"
+font-size="26"
+font-weight="700"
+fill="#14532D">
+AgriAI
+</text>
+
+</svg>

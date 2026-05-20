@@ -1,0 +1,33 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <circle cx="30" cy="30" r="24" fill="#16A34A"/>
+
+    <path
+        d="M18 34C18 24 25 18 34 18C32 24 30 29 24 34C28 34 32 36 35 40C25 44 18 40 18 34Z"
+        fill="#FACC15"/>
+
+    <path
+        d="M28 18C37 20 43 28 43 38C36 36 31 33 28 27C27 24 27 21 28 18Z"
+        fill="#14532D"/>
+
+    <text
+        x="65"
+        y="38"
+        font-size="24"
+        font-family="Arial"
+        font-weight="700"
+        fill="#14532D">
+        AgriAI
+    </text>
+
+    <text
+        x="145"
+        y="38"
+        font-size="20"
+        font-family="Arial"
+        font-weight="500"
+        fill="#A16207">
+        Platform
+    </text>
+
+</svg>

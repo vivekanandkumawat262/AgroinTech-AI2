@@ -1,0 +1,54 @@
+[
+  {
+    "id": 101,
+    "campaignName": "Cotton Pest Alert",
+    "crop": "Cotton",
+    "region": "Maharashtra",
+    "language": "Hindi",
+    "channel": "WhatsApp",
+    "status": "Active",
+    "variants": 2500,
+    "openRate": 84,
+    "ctr": 71,
+    "replyRate": 58
+  },
+  {
+    "id": 102,
+    "campaignName": "Rice Disease Awareness",
+    "crop": "Rice",
+    "region": "Tamil Nadu",
+    "language": "Tamil",
+    "channel": "SMS",
+    "status": "Running",
+    "variants": 1800,
+    "openRate": 78,
+    "ctr": 63,
+    "replyRate": 49
+  },
+  {
+    "id": 103,
+    "campaignName": "Sugarcane Growth Tips",
+    "crop": "Sugarcane",
+    "region": "UP",
+    "language": "Hindi",
+    "channel": "Voice",
+    "status": "Scheduled",
+    "variants": 950,
+    "openRate": 65,
+    "ctr": 52,
+    "replyRate": 44
+  },
+  {
+    "id": 104,
+    "campaignName": "Maize Yield Optimization",
+    "crop": "Maize",
+    "region": "Karnataka",
+    "language": "Kannada",
+    "channel": "WhatsApp",
+    "status": "Completed",
+    "variants": 3200,
+    "openRate": 89,
+    "ctr": 80,
+    "replyRate": 67
+  }
+]

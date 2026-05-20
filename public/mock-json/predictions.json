@@ -1,0 +1,47 @@
+[
+  {
+    "region": "Maharashtra",
+    "crop": "Cotton",
+    "videoProbability": 84,
+    "voiceProbability": 62,
+    "smsProbability": 58,
+    "ctrPrediction": 74,
+    "performance": 89
+  },
+  {
+    "region": "Punjab",
+    "crop": "Wheat",
+    "videoProbability": 66,
+    "voiceProbability": 79,
+    "smsProbability": 81,
+    "ctrPrediction": 63,
+    "performance": 76
+  },
+  {
+    "region": "Tamil Nadu",
+    "crop": "Rice",
+    "videoProbability": 91,
+    "voiceProbability": 57,
+    "smsProbability": 48,
+    "ctrPrediction": 82,
+    "performance": 93
+  },
+  {
+    "region": "UP",
+    "crop": "Sugarcane",
+    "videoProbability": 59,
+    "voiceProbability": 84,
+    "smsProbability": 73,
+    "ctrPrediction": 61,
+    "performance": 69
+  },
+  {
+    "region": "Karnataka",
+    "crop": "Maize",
+    "videoProbability": 77,
+    "voiceProbability": 68,
+    "smsProbability": 64,
+    "ctrPrediction": 71,
+    "performance": 81
+  }
+]

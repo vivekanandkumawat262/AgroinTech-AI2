@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Ramesh Kumar",
+    "crop": "Cotton",
+    "region": "Maharashtra",
+    "language": "Hindi",
+    "device": "Smartphone",
+    "cropStage": "Flowering",
+    "weather": "Humid",
+    "pestThreat": "Pink Bollworm",
+    "engagementScore": 82,
+    "preferredChannel": "WhatsApp"
+  },
+  {
+    "id": 2,
+    "name": "Suraj Singh",
+    "crop": "Wheat",
+    "region": "Punjab",
+    "language": "Punjabi",
+    "device": "Feature Phone",
+    "cropStage": "Vegetative",
+    "weather": "Dry",
+    "pestThreat": "Aphids",
+    "engagementScore": 68,
+    "preferredChannel": "SMS"
+  },
+  {
+    "id": 3,
+    "name": "Mohan Patel",
+    "crop": "Rice",
+    "region": "Tamil Nadu",
+    "language": "Tamil",
+    "device": "Smartphone",
+    "cropStage": "Seedling",
+    "weather": "Rainy",
+    "pestThreat": "Stem Borer",
+    "engagementScore": 91,
+    "preferredChannel": "WhatsApp"
+  },
+  {
+    "id": 4,
+    "name": "Deepak Yadav",
+    "crop": "Sugarcane",
+    "region": "Uttar Pradesh",
+    "language": "Hindi",
+    "device": "Feature Phone",
+    "cropStage": "Maturity",
+    "weather": "Hot",
+    "pestThreat": "Armyworm",
+    "engagementScore": 57,
+    "preferredChannel": "Voice Call"
+  },
+  {
+    "id": 5,
+    "name": "Ajay Sharma",
+    "crop": "Maize",
+    "region": "Karnataka",
+    "language": "Kannada",
+    "device": "Smartphone",
+    "cropStage": "Flowering",
+    "weather": "Cloudy",
+    "pestThreat": "Leaf Blight",
+    "engagementScore": 76,
+    "preferredChannel": "WhatsApp"
+  }
+]

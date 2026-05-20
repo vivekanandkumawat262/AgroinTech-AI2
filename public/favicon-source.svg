@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+width="64"
+height="64"
+viewBox="0 0 64 64">
+
+<rect
+width="64"
+height="64"
+rx="14"
+fill="#15803D"/>
+
+<path
+d="M18 38C18 26 28 18 40 18C37 27 33 34 25 38C30 39 34 42 37 47C24 50 18 46 18 38Z"
+fill="#FACC15"/>
+
+<path
+d="M30 18C42 20 48 29 48 42C39 40 33 35 30 27Z"
+fill="#DCFCE7"/>
+
+</svg>

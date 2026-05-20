@@ -1,0 +1,53 @@
+@import "./styles/globals.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+
+--background:#F9FAFB;
+--foreground:#111827;
+--card:#FFFFFF;
+
+--success:#22C55E;
+--warning:#F97316;
+--danger:#EF4444;
+
+}
+
+.dark{
+
+--background:#0F172A;
+--foreground:#F8FAFC;
+--card:#1E293B;
+
+}
+
+html,
+body,
+#root{
+
+margin:0;
+
+padding:0;
+
+width:100%;
+
+min-height:100vh;
+
+}
+
+body{
+
+background:
+var(--background);
+
+color:
+var(--foreground);
+
+font-family:
+Inter,
+sans-serif;
+
+}

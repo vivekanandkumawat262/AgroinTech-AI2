@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "type": "Humid",
+    "temperature": 28,
+    "humidity": 86,
+    "condition": "High moisture"
+  },
+  {
+    "id": 2,
+    "type": "Dry",
+    "temperature": 34,
+    "humidity": 32,
+    "condition": "Low rainfall"
+  },
+  {
+    "id": 3,
+    "type": "Rainy",
+    "temperature": 24,
+    "humidity": 92,
+    "condition": "Heavy rainfall"
+  },
+  {
+    "id": 4,
+    "type": "Cloudy",
+    "temperature": 26,
+    "humidity": 71,
+    "condition": "Moderate climate"
+  },
+  {
+    "id": 5,
+    "type": "Hot",
+    "temperature": 39,
+    "humidity": 22,
+    "condition": "Heat stress risk"
+  }
+]
