@@ -1,6 +1,4 @@
-import {
-ChevronRight
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 interface Props{
 
@@ -40,6 +38,7 @@ gap-6
 <div className="space-y-3">
 
 {
+
 breadcrumbs.length>0 && (
 
 <div className="
@@ -47,13 +46,16 @@ flex
 items-center
 gap-2
 text-sm
-text-muted-foreground
+text-gray-500
 flex-wrap
 ">
 
 {
+
 breadcrumbs.map(
+
 (item,index)=>(
+
 <div
 key={index}
 className="
@@ -70,17 +72,23 @@ gap-2
 </span>
 
 {
-index<
-breadcrumbs.length-1 &&
+
+index < breadcrumbs.length-1 && (
 
 <ChevronRight
 size={14}
 />
 
+)
+
 }
 
 </div>
+
 )
+
+)
+
 }
 
 </div>
@@ -99,10 +107,11 @@ font-bold
 </h1>
 
 {
+
 subtitle && (
 
 <p className="
-text-muted-foreground
+text-gray-500
 max-w-2xl
 ">
 
@@ -117,6 +126,7 @@ max-w-2xl
 </div>
 
 {
+
 actions && (
 
 <div>
