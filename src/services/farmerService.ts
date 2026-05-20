@@ -26,9 +26,9 @@ preferredChannel:string;
 
 }
 
-export async function getFarmers(){
+export async function getFarmers():Promise<any[]>{
 
-return api.farmers();
+return await api.farmers() as any[];
 
 }
 

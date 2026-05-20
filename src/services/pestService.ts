@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export async function getPests(){
+export async function getPests():Promise<any[]>{
 
-return api.pests();
+return await api.pests() as any[];
 
 }
 

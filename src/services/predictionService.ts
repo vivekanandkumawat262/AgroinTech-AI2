@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export async function getPredictions(){
+export async function getPredictions():Promise<any[]>{
 
-return api.predictions();
+return await api.predictions() as any[];
 
 }
 

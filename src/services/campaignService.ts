@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export async function getCampaigns(){
+export async function getCampaigns():Promise<any[]>{
 
-return api.campaigns();
+return await api.campaigns() as any[];
 
 }
 
@@ -12,7 +12,7 @@ const campaigns=
 await getCampaigns();
 
 return campaigns.filter(
-(c:any)=>
+(c)=>
 
 c.status==="Active"
 
@@ -30,13 +30,11 @@ const campaigns=
 await getCampaigns();
 
 return campaigns.map(
-(c:any)=>({
+(c)=>({
 
-name:
-c.campaignName,
+name:c.campaignName,
 
-ctr:
-c.ctr
+ctr:c.ctr
 
 })
 

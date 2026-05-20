@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export async function getWeather(){
+export async function getWeather():Promise<any[]>{
 
-return api.weather();
+return await api.weather() as any[];
 
 }
 
