@@ -1,38 +1,67 @@
-import { Pest } from "@/types/pests";
+// src/mock/pests.ts
 
-export const pests:Pest[]=[
+import type { Pest } from "@/types/pests";
 
-{
-id:1,
-name:"Pink Bollworm",
-crop:"Cotton",
-region:"Maharashtra",
-riskLevel:"High",
-weather:"Humid",
-warning:"Severe crop damage risk",
-recommendedProduct:"Cotton Shield Pro"
-},
+export const pests: Pest[] = [
 
-{
-id:2,
-name:"Stem Borer",
-crop:"Wheat",
-region:"Punjab",
-riskLevel:"Medium",
-weather:"Dry",
-warning:"Monitor crop stage",
-recommendedProduct:"Borer Guard"
-},
+  {
+    id: 1,
 
-{
-id:3,
-name:"Leaf Blight",
-crop:"Rice",
-region:"Tamil Nadu",
-riskLevel:"High",
-weather:"Rainy",
-warning:"Immediate action required",
-recommendedProduct:"Rice Protect"
-}
+    name: "Pink Bollworm",
+
+    crop: "Cotton",
+
+    region: "Maharashtra",
+
+    riskLevel: "High",
+
+    weather: "Humid",
+
+    warning:
+      "Severe crop damage risk",
+
+    recommendedProduct:
+      "Cotton Shield Pro",
+  },
+
+  {
+    id: 2,
+
+    name: "Stem Borer",
+
+    crop: "Wheat",
+
+    region: "Punjab",
+
+    riskLevel: "Medium",
+
+    weather: "Dry",
+
+    warning:
+      "Monitor crop stage",
+
+    recommendedProduct:
+      "Borer Guard",
+  },
+
+  {
+    id: 3,
+
+    name: "Leaf Blight",
+
+    crop: "Rice",
+
+    region: "Tamil Nadu",
+
+    riskLevel: "High",
+
+    weather: "Rainy",
+
+    warning:
+      "Immediate action required",
+
+    recommendedProduct:
+      "Rice Protect",
+  },
 
 ];

@@ -1,4 +1,7 @@
+"use client";
+
 import { useState } from "react";
+import type { ChangeEvent } from "react";
 
 import CropSelector from "./CropSelector";
 import RegionSelector from "./RegionSelector";
@@ -10,97 +13,80 @@ import LanguageSelector from "./LanguageSelector";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
-export default function CampaignForm(){
+export default function CampaignForm() {
 
-const [campaign,setCampaign]=useState("");
+  const [campaign, setCampaign] = useState("");
+  const [crop, setCrop] = useState("");
+  const [region, setRegion] = useState("");
+  const [weather, setWeather] = useState("");
+  const [pest, setPest] = useState("");
+  const [stage, setStage] = useState("");
+  const [language, setLanguage] = useState("");
 
-const [crop,setCrop]=useState("");
+  function handleSubmit() {
+    console.log({
+      campaign,
+      crop,
+      region,
+      weather,
+      pest,
+      stage,
+      language,
+    });
+  }
 
-const [region,setRegion]=useState("");
+  return (
+    <div className="space-y-5 bg-card p-6 rounded-2xl border">
 
-const [weather,setWeather]=useState("");
+      <Input
+        placeholder="Campaign Name"
+        value={campaign}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setCampaign(
+            e.target.value
+          )
+        }
+      />
 
-const [pest,setPest]=useState("");
+      <CropSelector
+        value={crop}
+        onChange={setCrop}
+      />
 
-const [stage,setStage]=useState("");
+      <RegionSelector
+        value={region}
+        onChange={setRegion}
+      />
 
-const [language,setLanguage]=useState("");
+      <WeatherSelector
+        value={weather}
+        onChange={setWeather}
+      />
 
-function handleSubmit(){
+      <PestSelector
+        value={pest}
+        onChange={setPest}
+      />
 
-console.log({
-campaign,
-crop,
-region,
-weather,
-pest,
-stage,
-language
-});
+      <CropStageSelector
+        value={stage}
+        onChange={setStage}
+      />
 
-}
+      <LanguageSelector
+        value={language}
+        onChange={setLanguage}
+      />
 
-return(
+      <Button
+        className="w-full"
+        onClick={handleSubmit}
+      >
+        Generate Campaign
+      </Button>
 
-<div className="
-space-y-5
-bg-card
-p-6
-rounded-2xl
-border
-">
-
-<Input
-placeholder="Campaign Name"
-value={campaign}
-onChange={(e)=>
-setCampaign(
-e.target.value
-)
-}
-/>
-
-<CropSelector
-value={crop}
-onChange={setCrop}
-/>
-
-<RegionSelector
-value={region}
-onChange={setRegion}
-/>
-
-<WeatherSelector
-value={weather}
-onChange={setWeather}
-/>
-
-<PestSelector
-value={pest}
-onChange={setPest}
-/>
-
-<CropStageSelector
-value={stage}
-onChange={setStage}
-/>
-
-<LanguageSelector
-value={language}
-onChange={setLanguage}
-/>
-
-<Button
-className="w-full"
-onClick={handleSubmit}
->
-
-Generate Campaign
-
-</Button>
-
-</div>
-
-);
-
+    </div>
+  );
 }

@@ -1,69 +1,83 @@
-import {
-AnalyticsMetric,
-ChannelAnalytics,
-RegionAnalytics
+// src/mock/analytics.ts
+
+import type {
+  AnalyticsMetric,
+  ChannelAnalytics,
+  RegionAnalytics,
 } from "@/types/analytics";
 
-export const analyticsSummary:AnalyticsMetric={
+export const analyticsSummary: AnalyticsMetric = {
+  openRate: 91,
 
-openRate:91,
+  ctr: 74,
 
-ctr:74,
+  replyRate: 58,
 
-replyRate:58,
+  conversion: 43,
 
-conversion:43,
-
-engagement:87
-
+  engagement: 87,
 };
 
-export const channelAnalytics:ChannelAnalytics[]=[
+export const channelAnalytics: ChannelAnalytics[] = [
+  {
+    channel: "WhatsApp",
 
-{
-channel:"WhatsApp",
-usage:62,
-performance:91
-},
+    usage: 62,
 
-{
-channel:"SMS",
-usage:24,
-performance:74
-},
+    performance: 91,
+  },
 
-{
-channel:"Voice",
-usage:14,
-performance:65
-}
+  {
+    channel: "SMS",
 
+    usage: 24,
+
+    performance: 74,
+  },
+
+  {
+    channel: "Voice",
+
+    usage: 14,
+
+    performance: 65,
+  },
 ];
 
-export const regionAnalytics:RegionAnalytics[]=[
+export const regionAnalytics: RegionAnalytics[] = [
+  {
+    region: "Maharashtra",
 
-{
-region:"Maharashtra",
-score:91,
-farmers:12000,
-campaigns:82,
-ctr:76
-},
+    score: 91,
 
-{
-region:"Punjab",
-score:80,
-farmers:9500,
-campaigns:65,
-ctr:69
-},
+    farmers: 12000,
 
-{
-region:"Tamil Nadu",
-score:94,
-farmers:8700,
-campaigns:58,
-ctr:81
-}
+    campaigns: 82,
 
+    ctr: 76,
+  },
+
+  {
+    region: "Punjab",
+
+    score: 80,
+
+    farmers: 9500,
+
+    campaigns: 65,
+
+    ctr: 69,
+  },
+
+  {
+    region: "Tamil Nadu",
+
+    score: 94,
+
+    farmers: 8700,
+
+    campaigns: 58,
+
+    ctr: 81,
+  },
 ];

@@ -1,49 +1,40 @@
-import {
-Sheet,
-SheetContent,
-SheetTrigger
-}
-from "@/components/ui/sheet";
+// src/components/layout/MobileSidebar.tsx
 
 import {
-Menu
-}
-from "lucide-react";
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+import { Menu } from "lucide-react";
 
 import Sidebar from "./Sidebar";
 
-export default function MobileSidebar(){
+export default function MobileSidebar() {
+  return (
+    <Sheet>
 
-return(
+      <SheetTrigger asChild>
+        <button type="button">
+          <Menu
+            className="
+            lg:hidden
+            cursor-pointer
+            "
+          />
+        </button>
+      </SheetTrigger>
 
-<Sheet>
+      <SheetContent
+        className="
+        w-72
+        p-0
+        bg-green-950
+        "
+      >
+        <Sidebar />
+      </SheetContent>
 
-<SheetTrigger>
-
-<Menu
-className="
-lg:hidden
-cursor-pointer
-"
-/>
-
-</SheetTrigger>
-
-<SheetContent
-side="left"
-className="
-w-72
-p-0
-bg-green-950
-"
->
-
-<Sidebar/>
-
-</SheetContent>
-
-</Sheet>
-
-);
-
+    </Sheet>
+  );
 }

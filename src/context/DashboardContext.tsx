@@ -1,143 +1,129 @@
+// src/context/DashboardContext.tsx
+
 import {
-createContext,
-useContext,
-useMemo,
-useState,
-ReactNode
+  createContext,
+  useContext,
+  useMemo,
+  useState,
 } from "react";
 
-interface DashboardStats{
+import type { ReactNode } from "react";
 
-totalFarmers:number;
+interface DashboardStats {
+  totalFarmers: number;
 
-activeCampaigns:number;
+  activeCampaigns: number;
 
-generatedVariants:number;
+  generatedVariants: number;
 
-predictedEngagement:number;
-
+  predictedEngagement: number;
 }
 
-interface ContextType{
+interface ContextType {
 
-stats:DashboardStats;
+  stats: DashboardStats;
 
-updateStats:(
-data:
-Partial<
-DashboardStats
->
-)=>void;
+  updateStats: (
+    data: Partial<DashboardStats>
+  ) => void;
 
-resetStats:()=>void;
-
+  resetStats: () => void;
 }
 
-const initialState:DashboardStats={
+const initialState: DashboardStats = {
+  totalFarmers: 52481,
 
-totalFarmers:52481,
+  activeCampaigns: 124,
 
-activeCampaigns:124,
+  generatedVariants: 12540,
 
-generatedVariants:12540,
-
-predictedEngagement:84
-
+  predictedEngagement: 84,
 };
 
-const DashboardContext=
-createContext<
-ContextType
-|null
->(null);
+const DashboardContext =
+  createContext<
+    ContextType | null
+  >(null);
+
+interface Props {
+  children: ReactNode;
+}
 
 export function DashboardProvider({
+  children,
+}: Props) {
 
-children
+  const [
+    stats,
+    setStats,
+  ] = useState<DashboardStats>(
+    initialState
+  );
 
-}:{
-children:ReactNode
-}){
+  function updateStats(
+    data: Partial<DashboardStats>
+  ) {
 
-const [
-stats,
-setStats
-]=useState(
-initialState
-);
+    setStats(
+      prev => ({
+        ...prev,
 
-function updateStats(
-data:
-Partial<
-DashboardStats
->
-){
+        ...data,
+      })
+    );
 
-setStats(
-prev=>({
+  }
 
-...prev,
+  function resetStats() {
 
-...data
+    setStats(
+      initialState
+    );
 
-})
-);
+  }
 
-}
+  const value =
+    useMemo(
+      () => ({
+        stats,
 
-function resetStats(){
+        updateStats,
 
-setStats(
-initialState
-);
+        resetStats,
+      }),
 
-}
+      [stats]
+    );
 
-const value=
-useMemo(
-()=>({
+  return (
 
-stats,
+    <DashboardContext.Provider
+      value={value}
+    >
 
-updateStats,
+      {children}
 
-resetStats
+    </DashboardContext.Provider>
 
-}),
-[
-stats
-]
-);
-
-return(
-
-<DashboardContext.Provider
-value={value}
->
-
-{children}
-
-</DashboardContext.Provider>
-
-);
+  );
 
 }
 
-export function useDashboard(){
+export function useDashboard() {
 
-const context=
-useContext(
-DashboardContext
-);
+  const context =
+    useContext(
+      DashboardContext
+    );
 
-if(!context){
+  if (!context) {
 
-throw new Error(
-"Dashboard provider missing"
-);
+    throw new Error(
+      "Dashboard provider missing"
+    );
 
-}
+  }
 
-return context;
+  return context;
 
 }

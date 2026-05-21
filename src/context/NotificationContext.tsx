@@ -1,201 +1,185 @@
+// src/context/NotificationContext.tsx
+
 import {
-createContext,
-useContext,
-useMemo,
-useState,
-ReactNode
+  createContext,
+  useContext,
+  useMemo,
+  useState,
 } from "react";
 
-export interface Notification{
+import type { ReactNode } from "react";
 
-id:number;
+export interface Notification {
+  id: number;
 
-title:string;
+  title: string;
 
-message:string;
+  message: string;
 
-type:
-"success"
-|
-"warning"
-|
-"info";
+  type:
+    | "success"
+    | "warning"
+    | "info";
 
-read:boolean;
+  read: boolean;
 
-time:string;
-
+  time: string;
 }
 
-interface ContextType{
+interface ContextType {
 
-notifications:
-Notification[];
+  notifications:
+    Notification[];
 
-addNotification:(
-notification:
-Omit<
-Notification,
-"id"
->
-)=>void;
+  addNotification: (
+    notification:
+      Omit<
+        Notification,
+        "id"
+      >
+  ) => void;
 
-markRead:(
-id:number
-)=>void;
+  markRead: (
+    id: number
+  ) => void;
 
-removeNotification:(
-id:number
-)=>void;
+  removeNotification: (
+    id: number
+  ) => void;
 
-clearNotifications:()=>void;
-
+  clearNotifications: () => void;
 }
 
-const NotificationContext=
-createContext<
-ContextType
-|null
->(null);
+const NotificationContext =
+  createContext<
+    ContextType | null
+  >(null);
+
+interface Props {
+  children: ReactNode;
+}
 
 export function NotificationProvider({
+  children,
+}: Props) {
 
-children
+  const [
+    notifications,
+    setNotifications,
+  ] = useState<
+    Notification[]
+  >([]);
 
-}:{
-children:ReactNode
-}){
+  function addNotification(
+    notification:
+      Omit<
+        Notification,
+        "id"
+      >
+  ) {
 
-const [
-notifications,
-setNotifications
-]=useState<
-Notification[]
->([]);
+    setNotifications(
+      prev => [
+        {
+          id: Date.now(),
 
-function addNotification(
-notification:any
-){
+          ...notification,
+        },
 
-setNotifications(
-prev=>[
-{
-id:Date.now(),
+        ...prev,
+      ]
+    );
 
-...notification
+  }
 
-},
+  function markRead(
+    id: number
+  ) {
 
-...prev
+    setNotifications(
+      prev =>
+        prev.map(
+          item =>
 
-]
-);
+            item.id === id
 
-}
+              ? {
+                  ...item,
+                  read: true,
+                }
 
-function markRead(
-id:number
-){
+              : item
+        )
+    );
 
-setNotifications(
-prev=>
+  }
 
-prev.map(
-item=>
+  function removeNotification(
+    id: number
+  ) {
 
-item.id===id
+    setNotifications(
+      prev =>
+        prev.filter(
+          item =>
+            item.id !== id
+        )
+    );
 
-?
+  }
 
-{
-...item,
-read:true
-}
+  function clearNotifications() {
 
-:
+    setNotifications([]);
 
-item
+  }
 
-)
+  const value =
+    useMemo(
+      () => ({
+        notifications,
 
-);
+        addNotification,
 
-}
+        markRead,
 
-function removeNotification(
-id:number
-){
+        removeNotification,
 
-setNotifications(
-prev=>
+        clearNotifications,
+      }),
 
-prev.filter(
-item=>
+      [notifications]
+    );
 
-item.id!==id
-)
+  return (
 
-);
+    <NotificationContext.Provider
+      value={value}
+    >
 
-}
+      {children}
 
-function clearNotifications(){
+    </NotificationContext.Provider>
 
-setNotifications(
-[]
-);
-
-}
-
-const value=
-useMemo(
-()=>({
-
-notifications,
-
-addNotification,
-
-markRead,
-
-removeNotification,
-
-clearNotifications
-
-}),
-[
-notifications
-]
-);
-
-return(
-
-<NotificationContext.Provider
-value={value}
->
-
-{children}
-
-</NotificationContext.Provider>
-
-);
+  );
 
 }
 
-export function useNotification(){
+export function useNotification() {
 
-const context=
-useContext(
-NotificationContext
-);
+  const context =
+    useContext(
+      NotificationContext
+    );
 
-if(!context){
+  if (!context) {
 
-throw new Error(
-"Notification provider missing"
-);
+    throw new Error(
+      "Notification provider missing"
+    );
 
-}
+  }
 
-return context;
+  return context;
 
 }

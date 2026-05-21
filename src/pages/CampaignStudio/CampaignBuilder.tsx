@@ -1,130 +1,117 @@
+"use client";
+
 import { useState } from "react";
+import type { ChangeEvent } from "react";
 
-import {
-Input
-} from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-import {
-Button
-} from "@/components/ui/button";
+export default function CampaignBuilder() {
 
-export default function CampaignBuilder(){
+  const [campaign, setCampaign] = useState("");
+  const [region, setRegion] = useState("");
+  const [crop, setCrop] = useState("");
+  const [language, setLanguage] = useState("");
+  const [pest, setPest] = useState("");
+  const [weather, setWeather] = useState("");
 
-const [campaign,setCampaign]=useState("");
+  function generate() {
+    console.log({
+      campaign,
+      region,
+      crop,
+      language,
+      pest,
+      weather,
+    });
+  }
 
-const [region,setRegion]=useState("");
+  return (
+    <div className="border rounded-2xl bg-card p-6 space-y-5">
 
-const [crop,setCrop]=useState("");
+      <h2 className="text-xl font-bold">
+        Campaign Builder
+      </h2>
 
-const [language,setLanguage]=useState("");
+      <Input
+        placeholder="Campaign Name"
+        value={campaign}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setCampaign(
+            e.target.value
+          )
+        }
+      />
 
-const [pest,setPest]=useState("");
+      <Input
+        placeholder="Target Region"
+        value={region}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setRegion(
+            e.target.value
+          )
+        }
+      />
 
-const [weather,setWeather]=useState("");
+      <Input
+        placeholder="Crop"
+        value={crop}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setCrop(
+            e.target.value
+          )
+        }
+      />
 
-function generate(){
+      <Input
+        placeholder="Language"
+        value={language}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setLanguage(
+            e.target.value
+          )
+        }
+      />
 
-console.log({
-campaign,
-region,
-crop,
-language,
-pest,
-weather
-});
+      <Input
+        placeholder="Pest"
+        value={pest}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setPest(
+            e.target.value
+          )
+        }
+      />
 
-}
+      <Input
+        placeholder="Weather"
+        value={weather}
+        onChange={(
+          e: ChangeEvent<HTMLInputElement>
+        ) =>
+          setWeather(
+            e.target.value
+          )
+        }
+      />
 
-return(
+      <Button
+        className="w-full"
+        onClick={generate}
+      >
+        Generate Campaign
+      </Button>
 
-<div className="
-border
-rounded-2xl
-bg-card
-p-6
-space-y-5
-">
-
-<h2 className="
-text-xl
-font-bold
-">
-
-Campaign Builder
-
-</h2>
-
-<Input
-placeholder="Campaign Name"
-value={campaign}
-onChange={(e)=>
-setCampaign(
-e.target.value
-)
-}
-/>
-
-<Input
-placeholder="Target Region"
-value={region}
-onChange={(e)=>
-setRegion(
-e.target.value
-)
-}
-/>
-
-<Input
-placeholder="Crop"
-value={crop}
-onChange={(e)=>
-setCrop(
-e.target.value
-)
-}
-/>
-
-<Input
-placeholder="Language"
-value={language}
-onChange={(e)=>
-setLanguage(
-e.target.value
-)
-}
-/>
-
-<Input
-placeholder="Pest"
-value={pest}
-onChange={(e)=>
-setPest(
-e.target.value
-)
-}
-/>
-
-<Input
-placeholder="Weather"
-value={weather}
-onChange={(e)=>
-setWeather(
-e.target.value
-)
-}
-/>
-
-<Button
-className="w-full"
-onClick={generate}
->
-
-Generate Campaign
-
-</Button>
-
-</div>
-
-);
-
+    </div>
+  );
 }
